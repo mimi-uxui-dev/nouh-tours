@@ -21,7 +21,7 @@ export async function POST(req) {
       await new User({
         name,
         email,
-        password: await bcrypt.hash(hash, 10),
+        password: await bcrypt.hash(password, 10),
       }).save();
       return NextResponse.json({
         success: "Registration successful.",

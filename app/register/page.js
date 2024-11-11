@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Register() {
@@ -8,10 +8,41 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("handle submit", name, email, password);
+    // console.log("handle submit", name, email, password);
+    try {
+      setLoading(true);
+      const res = await fetch(`${process.env.API}/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        // throw new Error(data.err);
+        console.log(data.err);
+        setLoading(false);
+        return;
+      }
+
+      const data = await res.json();
+      console.log(data.success);
+      setLoading(false);
+      router.push("/login");
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
   };
 
   return (
