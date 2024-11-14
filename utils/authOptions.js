@@ -24,6 +24,23 @@ export const authOptions = {
       },
     }),
   ],
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      // console.log("jwt callbalc ✨", token, user);
+      const userByEmail = await User.findOne({ email: token.email });
+      userByEmail.password = undefined;
+      token.user = userByEmail;
+      return token;
+    },
+    session: async ({ session, token }) => {
+      // console.log("session callbalc ❤️", session, token);
+
+      const userByEmail = await User.findOne({ email: token.email });
+      userByEmail.password = undefined;
+      session.user = userByEmail;
+      return session;
+    },
+  },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/login",
