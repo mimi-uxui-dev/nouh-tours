@@ -1,11 +1,18 @@
-import Link from "next/link";
+// import Link from "next/link";
+// import { useEffect } from "react";
 
 export default function AdminDashboard() {
+  // useEffect(() => {
+  //   first
+
+  //   return () => {
+  //     second
+  //   }
+  // }, [third])
+
   return (
     <div>
-      <hr />
-      <hr />
-      <h1>Admin Dashboard</h1>
+      <h1>Admin HOME Dashboard</h1>
     </div>
   );
 }
