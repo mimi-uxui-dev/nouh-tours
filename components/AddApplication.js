@@ -1,5 +1,4 @@
 "use client";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -12,7 +11,6 @@ function NewApplication(studentId) {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const session = useSession();
 
   const handleSubmit = async (e, studentId) => {
     e.preventDefault();
@@ -44,12 +42,7 @@ function NewApplication(studentId) {
       const data = await res.json();
       toast.success(data.success);
       setLoading(false);
-
       router.push("/dashboard/admin");
-      if (session?.data?.user?.role === "admin") {
-      } else {
-        router.push("/login");
-      }
     } catch (err) {
       console.log(err);
       toast.error("An error occurred. Please try again.");
