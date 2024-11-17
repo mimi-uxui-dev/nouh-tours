@@ -1,18 +1,37 @@
-// import Link from "next/link";
-// import { useEffect } from "react";
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function AdminDashboard() {
-  // useEffect(() => {
-  //   first
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  //   return () => {
-  //     second
-  //   }
-  // }, [third])
+  async function fetchData() {
+    const res = await fetch(`${process.env.API}/users`);
+    const data = await res.json();
+    setUsers(data);
+  }
+
+  useEffect(() => {
+    setLoading(true);
+    fetchData();
+    setLoading(false);
+  }, []); // Empty dependency array to run only once on mount
 
   return (
     <div>
-      <h1>Admin HOME Dashboard</h1>
+      <hr />
+      <h1>Admin HOME Dashboard B</h1>
+      {loading
+        ? "Loading"
+        : users?.map((user) => (
+            <div key={user._id}>
+              {user.fullName}{" "}
+              <Link href={`/dashboard/admin/createApplication/${user._id}`}>
+                Add Application
+              </Link>
+            </div>
+          ))}
     </div>
   );
 }

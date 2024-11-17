@@ -1,23 +1,26 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
-function NewApplication(studentId) {
+function AddApplication() {
   const [name, setName] = useState("");
   const [specialty, setSpecialty] = useState("");
   const [preEnrollment, setPreEnrollment] = useState("");
   const [status, setStatus] = useState("pending");
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(false);
+  const { studentId } = useParams();
 
   const router = useRouter();
 
-  const handleSubmit = async (e, studentId) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.API}/api/admin/univApplication`, {
+      const res = await fetch(`${process.env.API}/admin/univApplications`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +31,7 @@ function NewApplication(studentId) {
           preEnrollment,
           status,
           note,
-          studentId: studentId,
+          studentId,
         }),
       });
 
@@ -88,4 +91,4 @@ function NewApplication(studentId) {
   );
 }
 
-export default NewApplication;
+export default AddApplication;
