@@ -8,9 +8,6 @@ export default function AdminLayout({ children }) {
       <hr />
       <nav>
         <Link href={"/dashboard/admin"}>Admin Dashboard</Link>
-        <Link href={"/dashboard/admin/application"}>
-          Create New Application
-        </Link>
         <Link href={"/register"}>New Student</Link>
       </nav>
       {children}

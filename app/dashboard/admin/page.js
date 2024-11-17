@@ -10,16 +10,21 @@ export default function AdminDashboard() {
     const res = await fetch(`${process.env.API}/users`);
     const data = await res.json();
     setUsers(data);
+    console.log("🚀🚀", users);
   }
 
   useEffect(() => {
     setLoading(true);
     fetchData();
     setLoading(false);
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   return (
     <div>
+      <br />
+      <br />
+      <br />
+
       <hr />
       <h1>Admin HOME Dashboard B</h1>
       {loading
@@ -27,9 +32,14 @@ export default function AdminDashboard() {
         : users?.map((user) => (
             <div key={user._id}>
               {user.fullName}{" "}
+              {user.universitiesAppliedTo?.map((univ) => (
+                <li key={univ._id}>{univ.status}</li>
+              ))}
               <Link href={`/dashboard/admin/createApplication/${user._id}`}>
                 Add Application
               </Link>
+              <br />
+              <br />
             </div>
           ))}
     </div>

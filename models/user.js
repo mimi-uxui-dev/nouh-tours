@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import UnivApplication from "./univApplication"; // Ensure this path is correct
 
 const userSchema = new mongoose.Schema(
   {

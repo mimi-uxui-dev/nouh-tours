@@ -20,5 +20,6 @@ const univApplicationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Ensure the model is registered under the correct name
 export default mongoose.models.univApplication ||
   mongoose.model("univApplication", univApplicationSchema);

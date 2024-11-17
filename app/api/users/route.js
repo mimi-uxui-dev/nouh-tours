@@ -6,8 +6,7 @@ export async function GET() {
   await dbConnect();
 
   try {
-    // const users = await User.find().populate("universitiesAppliedTo");
-    const users = await User.find();
+    const users = await User.find().populate("universitiesAppliedTo");
     return NextResponse.json(users, { status: 200 });
   } catch (error) {
     return NextResponse.json(

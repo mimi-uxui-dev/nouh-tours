@@ -25,7 +25,6 @@ function Nav() {
       ) : (
         <>
           <Link href={"/login"}>Login</Link>
-          <Link href={"/register"}>Register</Link>
         </>
       )}
     </nav>

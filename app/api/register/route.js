@@ -4,9 +4,9 @@ import User from "@/models/user";
 import bcrypt from "bcrypt";
 
 export async function POST(req) {
+  await dbConnect();
   const _req = await req.json();
   // console.log(_req)
-  await dbConnect();
   try {
     const { fullName, email, password } = _req;
     const existingUser = await User.findOne({ email });

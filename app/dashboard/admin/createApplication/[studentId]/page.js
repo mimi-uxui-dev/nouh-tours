@@ -20,7 +20,7 @@ function AddApplication() {
 
     try {
       setLoading(true);
-      const res = await fetch(`${process.env.API}/admin/univApplications`, {
+      const res = await fetch(`${process.env.API}/admin/univApplication`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
