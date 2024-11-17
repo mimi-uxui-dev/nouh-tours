@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 
 export default function Register() {
-  const [name, setName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log("handle submit", name, email, password);
+    // console.log("handle submit", fullName, email, password);
     try {
       setLoading(true);
       const res = await fetch(`${process.env.API}/register`, {
@@ -22,7 +22,7 @@ export default function Register() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
+          fullName,
           email,
           password,
         }),
@@ -55,9 +55,9 @@ export default function Register() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter name"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          placeholder="Enter full name"
         />
         <input
           type="email"
@@ -71,7 +71,7 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter password"
         />
-        <button disabled={loading || !name || !email || !password}>
+        <button disabled={loading || !fullName || !email || !password}>
           {loading ? "Please wait.." : "Register"}
         </button>
       </form>

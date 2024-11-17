@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
     },
     contactInfo: { type: String },
     universitiesAppliedTo: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "UniversityApplication" },
+      { type: mongoose.Schema.Types.ObjectId, ref: "univApplication" },
     ],
   },
   { timestamps: true }
