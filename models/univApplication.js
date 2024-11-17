@@ -4,7 +4,7 @@ const univApplicationSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     specialty: { type: String },
-    preEnrollment: { type: Boolean, default: false },
+    preEnrollment: { type: String },
     status: {
       type: String,
       enum: ["pending", "accepted", "rejected"],
