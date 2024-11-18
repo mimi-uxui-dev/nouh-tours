@@ -17,6 +17,11 @@
   }
 }  */
 
+.bg-darkGray {
+  background-color: var(--darkGray);
+  color: #fff;
+}
+
 body {
   color: var(--black);
   background: white;
@@ -27,8 +32,14 @@ a {
   font-weight: 500;
 }
 
+.link {
+}
+
 a:hover {
+  color: var(--darkGreen);
   cursor: pointer;
+  @apply pl-12;
+  transition: all ease 0.3s;
 }
 
 .fontly-text {
@@ -76,6 +87,7 @@ a:hover {
 
   @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
 }
+
 .btn:hover,
 .outline-btn:hover {
   box-shadow: 0 2px 16px 0 hsla(149, 71%, 39%, 0.75);
