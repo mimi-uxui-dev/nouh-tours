@@ -53,8 +53,8 @@ export default function Register() {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className="my-10 py-20 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">
+      <h1 className="text-center">Register New Student</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

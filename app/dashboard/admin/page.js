@@ -28,7 +28,7 @@ export default function AdminDashboard() {
             <div key={user._id}>
               {user.fullName}{" "}
               {user.universitiesAppliedTo?.map((univ) => (
-                <li key={univ._id}>{univ.status}</li>
+                <li key={univ._id}> {univ.status}</li>
               ))}
               <Link href={`/dashboard/admin/createApplication/${user._id}`}>
                 Add Application

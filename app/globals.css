@@ -20,7 +20,11 @@
 body {
   color: var(--black);
   background: white;
-  @apply fontly-text expanded-text semi-bold-text;
+  @apply fontly-text expanded-text;
+}
+
+a {
+  font-weight: 500;
 }
 
 a:hover {
@@ -66,8 +70,46 @@ a:hover {
   color: var(--darkGray);
   background-color: var(--lightGreen);
   font-size: 1.125rem;
-  @apply line-h-150 px-6 py-4 border-radius-100;
+  height: 59px;
+  display: inline-block;
+  border: 1px solid transparent;
+
+  @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
+}
+.btn:hover,
+.outline-btn:hover {
+  box-shadow: 0 2px 16px 0 hsla(149, 71%, 39%, 0.75);
+  color: var(--darkGray);
+  background-color: var(--lightGreen);
+  border: 1px solid transparent;
+
+  transition: all ease 0.4s;
 }
 
 .outline-btn {
+  background-color: transparent;
+  color: var(--darkGray);
+  border: 1px solid var(--darkGray);
+  font-size: 1.125rem;
+  height: 59px;
+  display: inline-block;
+
+  @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
+}
+
+form {
+  @apply my-10 flex flex-col w-96 self-center;
+}
+
+form > button {
+  @apply btn mt-4;
+}
+
+input {
+  font-weight: 500;
+  @apply px-5 py-4 mb-1 rounded-full outline-1 outline-green-700;
+}
+
+h1 {
+  @apply text-5xl;
 }
