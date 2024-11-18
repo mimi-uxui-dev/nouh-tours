@@ -2,24 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root {
+  --black: #202020;
+  --darkGray: #2c2c2c;
+  --lightGreen: #25d366;
+  --darkGreen: #1daa61;
+  --gray: #9f9f9f;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-} */
+}  */
 
 body {
-  /* color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif; */
+  color: var(--black);
+  background: white;
+  @apply fontly-text expanded-text semi-bold-text;
 }
 
 a:hover {
   cursor: pointer;
+}
+
+.fontly-text {
+  font-family: var(--font-mona-sans);
+  font-weight: 300; /* Example of lighter weight */
+  font-style: normal;
+  font-stretch: 100%; /* Default width */
+}
+
+.semi-bold-text {
+  font-weight: 600;
+}
+
+.bold-text {
+  font-weight: 800; /* Bold weight */
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.condensed-text {
+  font-stretch: 75%; /* Condensed */
+}
+
+.expanded-text {
+  font-stretch: 125%; /* Expanded */
+}
+
+.line-h-150 {
+  line-height: 150%;
+}
+
+.border-radius-100 {
+  border-radius: 100px;
+}
+
+.btn {
+  color: var(--darkGray);
+  background-color: var(--lightGreen);
+  font-size: 1.125rem;
+  @apply line-h-150 px-6 py-4 border-radius-100;
+}
+
+.outline-btn {
 }

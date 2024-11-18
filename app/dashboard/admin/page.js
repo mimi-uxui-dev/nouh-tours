@@ -20,12 +20,7 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div>
-      <br />
-      <br />
-      <br />
-
-      <hr />
+    <div className="max-w-">
       <h1>Admin HOME Dashboard B</h1>
       {loading
         ? "Loading"
