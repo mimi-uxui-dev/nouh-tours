@@ -95,8 +95,8 @@ a:hover {
   font-size: 0.75rem;
   height: fit-content;
   display: inline-block;
-
-  @apply px-3 py-2 min-w-9 w-full border-radius-100 semi-bold-text;
+  text-align: center;
+  @apply px-4 py-2 w-fit border-radius-100 semi-bold-text;
 }
 
 .btn:hover,
@@ -105,7 +105,6 @@ a:hover {
   color: var(--darkGray);
   background-color: var(--lightGreen);
   border: 1px solid transparent;
-
   transition: all ease 0.4s;
 }
 

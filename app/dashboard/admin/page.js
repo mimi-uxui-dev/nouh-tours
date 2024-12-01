@@ -76,9 +76,19 @@ export default function AdminDashboard() {
                     <div>{univ.preEnrollment}</div>
                     <div>{univ.status}</div>
                     <div>{univ.note}</div>
-                    <div className="flex justify-between gap-2">
-                      <button className="outline-btn-sm">Edit ✏️</button>
-                      <button className="outline-btn-sm">Delete 🗑️</button>
+                    <div className="flex gap-2">
+                      <Link
+                        href={`/dashboard/admin/editApplication/${univ._id}`}
+                        className="outline-btn-sm"
+                      >
+                        Edit ✏️
+                      </Link>
+                      <Link
+                        href={`/dashboard/admin/deleteApplication/${univ._id}`}
+                        className="outline-btn-sm"
+                      >
+                        Delete 🗑️
+                      </Link>
                     </div>
                   </div>
                 ))

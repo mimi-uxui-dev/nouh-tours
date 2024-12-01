@@ -80,9 +80,9 @@ function AddApplication() {
           placeholder="preEnrollment"
         />
         <select onChange={(e) => setStatus(e.target.value)} value={status}>
-          <option value="Pending">Pending</option>
-          <option value="Accepted">Accepted</option>
-          <option value="Rejected">Rejected</option>
+          <option value="pending">Pending</option>
+          <option value="accepted">Accepted</option>
+          <option value="rejected">Rejected</option>
         </select>
         <textarea
           placeholder="Note..."
