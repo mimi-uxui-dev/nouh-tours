@@ -48,6 +48,27 @@ export default function AdminDashboard() {
     }
   };
 
+  const handleDeleteUser = async (userId) => {
+    if (!confirm("Are you sure you want to remove this user?")) return;
+
+    try {
+      const res = await fetch(`/api/admin/user/${userId}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to remove user");
+      }
+
+      toast.success("User removed successfully!");
+      setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to remove user");
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -56,6 +77,10 @@ export default function AdminDashboard() {
     <div>
       {loading ? (
         <div className="text-center text-4xl pt-4">Loading...</div>
+      ) : users.length === 0 ? (
+        <div className="text-center text-4xl pt-4">
+          No students yet. The list is empty.
+        </div>
       ) : (
         users?.map((user) => (
           <div className="grid " key={user._id}>
@@ -74,7 +99,10 @@ export default function AdminDashboard() {
                 >
                   Add Application
                 </Link>
-                <button className="outline-btn-white w-fit">
+                <button
+                  onClick={() => handleDeleteUser(user._id)}
+                  className="outline-btn-white w-fit"
+                >
                   Remove Student
                 </button>
               </div>

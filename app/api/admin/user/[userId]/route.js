@@ -3,11 +3,13 @@ import User from "@/models/user";
 import { NextResponse } from "next/server";
 
 // DELETE: Remove a user by ID
-export async function DELETE(request, { params }) {
+export async function DELETE(request, context) {
   await dbConnect();
 
   try {
-    const { userId } = params; // Dynamic route parameter
+    const { params } = context; // Access params from context
+    const { userId } = params; // Extract userId
+
     const deletedUser = await User.findByIdAndDelete(userId);
 
     if (!deletedUser) {
@@ -19,6 +21,7 @@ export async function DELETE(request, { params }) {
       { status: 200 }
     );
   } catch (error) {
+    console.error("Error deleting user:", error);
     return NextResponse.json(
       { error: "Failed to delete user" },
       { status: 500 }
