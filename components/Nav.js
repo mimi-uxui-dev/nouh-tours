@@ -18,7 +18,7 @@ function Nav() {
               data?.user?.role === "admin" ? "admin" : "user"
             }`}
           >
-            Dashboard {data?.user?.name} ({data?.user?.role})
+            Dashboard {data?.user?.fullName} ({data?.user?.role})
           </Link>
           <a onClick={() => signOut({ callbackUrl: "/login" })}>Logout</a>
         </>
