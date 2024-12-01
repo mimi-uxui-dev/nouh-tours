@@ -31,19 +31,17 @@ export async function DELETE(request, context) {
 
 export async function GET(request, { params }) {
   try {
-    const user = await User.findById(params.userId).populate(
-      "universitiesAppliedTo"
-    );
+    const userId = params.userId; // Get the userId from params
+    const user = await User.findById(userId).populate("universitiesAppliedTo");
+
+    // If no user found, return 404
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
+      return new NextResponse("User not found", { status: 404 });
     }
 
     return NextResponse.json(user, { status: 200 });
   } catch (error) {
-    console.error("Error fetching user with populated universities:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch user data" },
-      { status: 500 }
-    );
+    console.error("Error fetching user:", error);
+    return new NextResponse("Error fetching user", { status: 500 });
   }
 }
