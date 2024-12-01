@@ -85,39 +85,3 @@ export async function PUT(request) {
     );
   }
 }
-
-// Delete: new universiity application
-export async function DELETE(request) {
-  await dbConnect();
-
-  try {
-    const { applicationId } = await request.json();
-
-    const application = await UnivApplication.findById(applicationId);
-    if (!application) {
-      return NextResponse.json(
-        { error: "Application not found" },
-        { status: 404 }
-      );
-    }
-
-    await UnivApplication.findByIdAndDelete(applicationId);
-
-    await User.findByIdAndUpdate(
-      application.studentId,
-      { $pull: { universitiesAppliedTo: applicationId } }, // Remove the application ID
-      { new: true }
-    );
-
-    return NextResponse.json(
-      { message: "Application deleted successfully" },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json(
-      { error: "Failed to delete application" },
-      { status: 500 }
-    );
-  }
-}

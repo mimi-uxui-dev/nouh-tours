@@ -18,8 +18,6 @@ export default function EditApplication() {
   });
 
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
 
   // Fetch the existing application data
   useEffect(() => {
@@ -95,17 +93,13 @@ export default function EditApplication() {
 
       toast.success("Update application with success ");
 
-      // Optionally, redirect after a delay
-      setTimeout(() => {
-        router.push("/dashboard/admin");
-      }, 2000);
+      router.push("/dashboard/admin");
     } catch (err) {
       setError(err.message);
     }
   };
 
   if (loading) return <p>Loading...</p>;
-  // if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="my-10 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">

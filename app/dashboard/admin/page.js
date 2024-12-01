@@ -1,10 +1,14 @@
 "use client";
-import Link from "next/link";
+
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   async function fetchData() {
     setLoading(true);
@@ -19,6 +23,30 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   }
+
+  const handleDelete = async (applicationId) => {
+    if (!confirm("Are you sure you want to delete this application?")) return;
+
+    try {
+      const res = await fetch(`/api/admin/univApplication/${applicationId}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to delete application. 01");
+      }
+
+      toast.success("Application deleted successfully!");
+      // router.refresh();
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to delete the application. 02");
+    }
+  };
 
   useEffect(() => {
     fetchData();
@@ -39,12 +67,17 @@ export default function AdminDashboard() {
                 <div>{user.email}</div>
                 <div>{user.contactInfo}</div>
               </div>
-              <Link
-                className="btn w-fit"
-                href={`/dashboard/admin/createApplication/${user._id}`}
-              >
-                Add Application
-              </Link>
+              <div className="flex gap-2">
+                <Link
+                  className="btn w-fit"
+                  href={`/dashboard/admin/createApplication/${user._id}`}
+                >
+                  Add Application
+                </Link>
+                <button className="outline-btn-white w-fit">
+                  Remove Student
+                </button>
+              </div>
             </div>
             {/* Univ Row */}
             <div className="bg-slate-200 flex flex-col justify-between w-full px-12 py-2 font-medium">
@@ -83,12 +116,12 @@ export default function AdminDashboard() {
                       >
                         Edit ✏️
                       </Link>
-                      <Link
-                        href={`/dashboard/admin/deleteApplication/${univ._id}`}
+                      <button
+                        onClick={() => handleDelete(univ._id)}
                         className="outline-btn-sm"
                       >
                         Delete 🗑️
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 ))
