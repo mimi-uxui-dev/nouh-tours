@@ -91,9 +91,8 @@ export async function DELETE(request) {
   await dbConnect();
 
   try {
-    const { applicationId } = await request.json(); // Expect `applicationId` in the request body
+    const { applicationId } = await request.json();
 
-    // Find the application to get the associated user ID
     const application = await UnivApplication.findById(applicationId);
     if (!application) {
       return NextResponse.json(
@@ -102,10 +101,8 @@ export async function DELETE(request) {
       );
     }
 
-    // Remove the application from the collection
     await UnivApplication.findByIdAndDelete(applicationId);
 
-    // Remove the application reference from the user's universitiesAppliedTo array
     await User.findByIdAndUpdate(
       application.studentId,
       { $pull: { universitiesAppliedTo: applicationId } }, // Remove the application ID
