@@ -88,9 +88,28 @@ a:hover {
   @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
 }
 
+.outline-btn-sm {
+  background-color: transparent;
+  color: var(--darkGray);
+  border: 1px solid var(--darkGray);
+  font-size: 0.75rem;
+  height: fit-content;
+  display: inline-block;
+
+  @apply px-3 py-2 min-w-9 w-full border-radius-100 semi-bold-text;
+}
+
 .btn:hover,
 .outline-btn:hover {
   box-shadow: 0 2px 16px 0 hsla(149, 71%, 39%, 0.75);
+  color: var(--darkGray);
+  background-color: var(--lightGreen);
+  border: 1px solid transparent;
+
+  transition: all ease 0.4s;
+}
+
+.outline-btn-sm:hover {
   color: var(--darkGray);
   background-color: var(--lightGreen);
   border: 1px solid transparent;

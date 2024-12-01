@@ -51,12 +51,13 @@ export default function AdminDashboard() {
               {user.universitiesAppliedTo.length === 0 ? (
                 ""
               ) : (
-                <div className="grid grid-cols-6 text-green-600">
+                <div className="w-full grid grid-cols-6 text-green-600 gap-2 mb-2">
                   <div>Name</div>
                   <div>Specialty</div>
                   <div>PreEnrollment</div>
                   <div>Status</div>
                   <div>Note</div>
+                  <div>Actions</div>
                 </div>
               )}
 
@@ -68,13 +69,17 @@ export default function AdminDashboard() {
                 user.universitiesAppliedTo?.map((univ) => (
                   <div
                     key={univ._id}
-                    className="grid grid-cols-6 font-medium py-1"
+                    className=" w-full grid grid-cols-6 font-medium py-1 gap-2"
                   >
                     <div>{univ.name}</div>
                     <div>{univ.specialty}</div>
                     <div>{univ.preEnrollment}</div>
                     <div>{univ.status}</div>
                     <div>{univ.note}</div>
+                    <div className="flex justify-between gap-2">
+                      <button className="outline-btn-sm">Edit ✏️</button>
+                      <button className="outline-btn-sm">Delete 🗑️</button>
+                    </div>
                   </div>
                 ))
               )}
