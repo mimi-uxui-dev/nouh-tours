@@ -62,7 +62,10 @@ export default function AdminDashboard() {
       }
 
       toast.success("User removed successfully!");
-      setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+      // setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } catch (err) {
       console.error(err.message);
       toast.error("Failed to remove user");

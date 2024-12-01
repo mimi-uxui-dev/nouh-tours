@@ -7,7 +7,7 @@ export async function DELETE(request, context) {
   await dbConnect();
 
   try {
-    const { params } = context; // Access params from context
+    const { params } = context; // Access params via context
     const { userId } = params; // Extract userId
 
     const deletedUser = await User.findByIdAndDelete(userId);
