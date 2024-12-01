@@ -28,3 +28,22 @@ export async function DELETE(request, context) {
     );
   }
 }
+
+export async function GET(request, { params }) {
+  try {
+    const user = await User.findById(params.userId).populate(
+      "universitiesAppliedTo"
+    );
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(user, { status: 200 });
+  } catch (error) {
+    console.error("Error fetching user with populated universities:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch user data" },
+      { status: 500 }
+    );
+  }
+}
