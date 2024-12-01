@@ -53,10 +53,10 @@ export default function AdminDashboard() {
               ) : (
                 <div className="grid grid-cols-6 text-green-600">
                   <div>Name</div>
-                  <div>specialty</div>
-                  <div>preEnrollment</div>
-                  <div>status</div>
-                  <div>note</div>
+                  <div>Specialty</div>
+                  <div>PreEnrollment</div>
+                  <div>Status</div>
+                  <div>Note</div>
                 </div>
               )}
 
@@ -66,7 +66,10 @@ export default function AdminDashboard() {
                 </div>
               ) : (
                 user.universitiesAppliedTo?.map((univ) => (
-                  <div key={univ._id} className="grid grid-cols-6 font-medium">
+                  <div
+                    key={univ._id}
+                    className="grid grid-cols-6 font-medium py-1"
+                  >
                     <div>{univ.name}</div>
                     <div>{univ.specialty}</div>
                     <div>{univ.preEnrollment}</div>

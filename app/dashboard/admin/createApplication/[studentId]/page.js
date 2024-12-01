@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
@@ -54,8 +55,11 @@ function AddApplication() {
   };
 
   return (
-    <div>
-      <h1>New Application 🚀</h1>
+    <div className="my-10 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">
+      <Link className="pl-14 mb-10" href="/dashboard/admin">
+        ← Go Back
+      </Link>
+      <h1 className="text-center">New Application 🚀</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -76,11 +80,15 @@ function AddApplication() {
           placeholder="preEnrollment"
         />
         <select onChange={(e) => setStatus(e.target.value)} value={status}>
-          <option value="pending">Pending</option>
-          <option value="accepted">Accepted</option>
-          <option value="rejected">Rejected</option>
+          <option value="Pending">Pending</option>
+          <option value="Accepted">Accepted</option>
+          <option value="Rejected">Rejected</option>
         </select>
-        <textarea value={note} onChange={(e) => setNote(e.target.value)}>
+        <textarea
+          placeholder="Note..."
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        >
           Note ..
         </textarea>
         <button disabled={loading}>

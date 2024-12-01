@@ -7,7 +7,7 @@ function Nav() {
   // console.log("data -> ", data, " Status -> ", status);
 
   return (
-    <nav>
+    <nav className="flex justify-between">
       <Link href={"/"}>Home</Link>
       <Link href={"/"}>Services</Link>
 
