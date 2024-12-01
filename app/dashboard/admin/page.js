@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
@@ -8,7 +7,6 @@ import Link from "next/link";
 export default function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function fetchData() {
     setLoading(true);
@@ -88,23 +86,22 @@ export default function AdminDashboard() {
         users?.map((user) => (
           <div className="grid " key={user._id}>
             {/* Users Row */}
-
-            <div className="py-2 px-2 flex flex-row justify-between items-center bg-darkGray mt-6">
-              <div className="px-6 grid grid-cols-4 font-medium	">
-                <div>{user.fullName}</div>
-                <div>{user.email}</div>
-                <div>{user.contactInfo}</div>
+            <div className="py-2 px-2 flex flex-row items-center justify-between bg-darkGray mt-6">
+              <div className="px-6 flex gap-4 font-medium w-full">
+                <div>
+                  {user.fullName} &nbsp; / &nbsp; {user.email}
+                </div>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 w-full justify-end">
                 <Link
-                  className="btn w-fit"
+                  className="btn "
                   href={`/dashboard/admin/createApplication/${user._id}`}
                 >
                   Add Application
                 </Link>
                 <button
                   onClick={() => handleDeleteUser(user._id)}
-                  className="outline-btn-white w-fit"
+                  className="outline-btn-white "
                 >
                   Remove Student
                 </button>

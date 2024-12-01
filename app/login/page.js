@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { signIn, SignIn } from "next-auth/react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -39,8 +40,11 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="my-10 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">
+      <Link className="pl-14 mb-10" href="/">
+        ← Go Back
+      </Link>
+      <h1 className="text-center">Login</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"

@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "user",
     },
-    contactInfo: { type: String },
+
     universitiesAppliedTo: [
       { type: mongoose.Schema.Types.ObjectId, ref: "univApplication" },
     ],

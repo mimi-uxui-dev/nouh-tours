@@ -58,7 +58,6 @@ export default function Register() {
       <Link className="pl-14 mb-10" href="/dashboard/admin">
         ← Go Back
       </Link>
-
       <h1 className="text-center">Register New Student</h1>
       <form onSubmit={handleSubmit}>
         <input
