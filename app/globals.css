@@ -32,7 +32,8 @@ a {
   font-weight: 500;
 }
 
-.link {
+nav * {
+  font-size: 18px;
 }
 
 a:hover {
@@ -81,11 +82,11 @@ a:hover {
   color: var(--darkGray);
   background-color: var(--lightGreen);
   font-size: 1.125rem;
-  height: 59px;
+  /* height: 59px; */
   display: inline-block;
   border: 1px solid transparent;
 
-  @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
+  @apply line-h-150 lg:px-6 lg:py-4  px-4 py-3 border-radius-100 semi-bold-text;
 }
 
 .outline-btn-sm {
@@ -171,4 +172,23 @@ textarea {
 
 h1 {
   @apply text-5xl;
+}
+
+.hero-section {
+  background-image: url("./images/hero-bg.jpg");
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  margin-top: 48px;
+}
+
+.container-1440 {
+  max-width: 1440px;
+  background-color: #1daa61;
 }
