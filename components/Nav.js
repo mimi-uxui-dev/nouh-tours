@@ -9,13 +9,13 @@ function Nav() {
   // console.log("data -> ", data, " Status -> ", status);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100 ">
-      <nav className="text-white max-w-screen-2xl nav flex justify-between items-center w-full  lg:px-0 px-5">
+    <div className="flex justify-center items-center">
+      <nav className="text-white max-w-screen-2xl nav flex justify-between items-center w-full  2xl:px-0 px-5">
         <Link href={"/"}>
           <Image
             src={logo}
             alt="nouh tours logo"
-            className="h-10 w-full lg:h-20"
+            className="h-10 w-full lg:h-14 "
           />
         </Link>
 
