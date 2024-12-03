@@ -214,6 +214,21 @@ h1 {
   @apply px-6 py-8 rounded-3xl;
 }
 
+.sectionHeader {
+  @apply text-3xl md:text-5xl font-semibold;
+}
+
+.quote {
+  background-image: url("./images/quote.jpg");
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--lightGreen);
+  line-height: 150% !important;
+  @apply text-4xl sm:text-5xl lg:text-5xl 2xl:text-7xl font-semibold text-center px-4 py-24 sm:p-24 lg:p-20 xl:p-40 2xl:p-60;
+}
+
 @media (min-width: 1024px) {
   nav *,
   text-18,
@@ -221,8 +236,4 @@ h1 {
   option {
     font-size: 16px;
   }
-}
-
-.sectionHeader {
-  @apply text-3xl md:text-5xl font-semibold;
 }

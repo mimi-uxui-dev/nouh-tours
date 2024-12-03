@@ -9,7 +9,10 @@ function Hero() {
       {/* <Image src={nouh} alt="nouh" className="nouh" /> */}
       <div className="flex justify-center w-full">
         <div className="sm:bg-white bg-transparent sm:rounded-full rounded-lg rounded-b-3xl flex flex-col sm:flex-row justify-center self-center w-fit h-fit gap-2 absolute bottom-40 ">
-          <select className="border-transparent min-w-96 text-18" defaultValue>
+          <select
+            className="border-transparent  sm:min-w-96 text-18"
+            defaultValue
+          >
             <option name="">Services 🔥🐦‍🔥</option>
             <option name="">BAC en cours</option>
             <option name="">Bachelier et L1</option>
