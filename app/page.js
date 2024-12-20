@@ -1,3 +1,5 @@
+import Aboutus from "@/components/sections/Aboutus";
+import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import OurProcess from "@/components/sections/OurProcess";
 import OurServices from "@/components/sections/OurServices";
@@ -12,6 +14,8 @@ export default function Home() {
       <OurProcess />
       <Quote />
       <Stats />
+      <Contact />
+      {/* <Aboutus /> */}
     </div>
   );
 }
