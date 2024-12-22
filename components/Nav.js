@@ -23,8 +23,8 @@ function Nav() {
           <div className="lg:flex space-x-10 items-center hidden ">
             <Link href={"/"}>Home</Link>
             <Link href={"#service"}>Our Services</Link>
-            <Link href={"/"}>Our Process</Link>
-            <Link href={"/"}>Contact</Link>
+            <Link href={"#process"}>Our Process</Link>
+            <Link href={"#contact"}>Contact</Link>
           </div>
           {status === "authenticated" ? (
             <div className="flex gap-3 md:gap-12">

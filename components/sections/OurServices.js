@@ -82,7 +82,10 @@ function OurServices() {
     },
   ];
   return (
-    <section className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48">
+    <section
+      id="service"
+      className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48"
+    >
       <SectionHeader title="Our Services" />
 
       <div className="max-w-screen-2xl flex self-center flex-col w-full gap-8">

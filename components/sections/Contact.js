@@ -25,7 +25,10 @@ function Contact() {
   };
 
   return (
-    <article className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48">
+    <article
+      id="contact"
+      className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48"
+    >
       <SectionHeader title={"Contact"} />
       <div className="max-w-screen-2xl flex self-center flex-col w-full gap-8">
         <div className="flex flex-col xl:grid grid-cols-2 gap-6">

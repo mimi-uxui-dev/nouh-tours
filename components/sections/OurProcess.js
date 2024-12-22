@@ -20,7 +20,10 @@ function OurProcess() {
     },
   ];
   return (
-    <section className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48">
+    <section
+      id="process"
+      className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48"
+    >
       <SectionHeader title="Our Process" />
 
       <div className="max-w-screen-2xl flex self-center flex-col w-full gap-8">
