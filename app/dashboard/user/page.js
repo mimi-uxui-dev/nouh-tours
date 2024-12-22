@@ -40,7 +40,10 @@ export default function UserDashboard() {
         <h1 className="text-center text-2xl lg:4xl">
           {user?.fullName} Dashboard <br />
         </h1>
-        <Link href={""} className="btn text-center">
+        <Link
+          href={"https://calendly.com/Nouhtours"}
+          className="btn text-center"
+        >
           Book Appointment
         </Link>
       </div>
