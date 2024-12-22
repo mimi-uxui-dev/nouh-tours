@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <div className="flex justify-center items-center">
-      <nav className="text-white max-w-screen-2xl nav flex justify-between items-center w-full  2xl:px-0 px-5">
+      <nav className="text-black max-w-screen-2xl nav flex justify-between items-center w-full  2xl:px-0 px-5">
         <Link href={"/"}>
           <Image
             src={logo}
