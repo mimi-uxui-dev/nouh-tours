@@ -11,7 +11,7 @@ export default function AdminLayout({ children }) {
           New Student
         </Link>
       </nav>
-      <br />
+
       {children}
     </div>
   );

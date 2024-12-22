@@ -36,10 +36,14 @@ export default function UserDashboard() {
       <Link className="pl-14 mb-10" href="/">
         ← Go Back
       </Link>
-      <h1 className="text-center text-2xl lg:4xl">
-        {user?.fullName} Dashboard <br />
-      </h1>
-
+      <div className="flex flex-col md:flex-row justify-between px-4">
+        <h1 className="text-center text-2xl lg:4xl">
+          {user?.fullName} Dashboard <br />
+        </h1>
+        <Link href={""} className="btn text-center">
+          Book Appointment
+        </Link>
+      </div>
       {loading ? (
         <div className="text-center text-4xl pt-4">Loading...</div>
       ) : moi.universitiesAppliedTo?.length !== 0 ? (
