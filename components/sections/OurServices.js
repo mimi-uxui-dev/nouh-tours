@@ -31,7 +31,7 @@ function OurServices() {
     // },
     {
       id: 2,
-      title: "Italy",
+      title: "Study in Italy",
       procedures: [
         {
           id: 6,
@@ -82,6 +82,25 @@ function OurServices() {
           para: "We provide access to scholarships and ensure you can study in Italy for free, covering university tuition fees. Our support guarantees a cost-free academic experience, allowing you to focus entirely on your studies.",
           price: "32000DA",
         },
+        {
+          id: 8,
+          title: "Accompaniment in Italy",
+          dossier: [
+            "Original + Translation in English or Italian",
+            "Diplome de BAC",
+            "Relever de BAC",
+            "Relever de note license",
+            "Diplome de Licence",
+            "Relever de note Master",
+            "Diplome de Master",
+            "Passport",
+            "Photo Biometric",
+            "Letter de reccomdation (optional)",
+            "Test IELTS (optional)",
+          ],
+          para: "Our services provides comprehensive support to students during their journey to Italy. Our team is dedicated to ensuring a smooth transition, offering personalized guidance every step of the way to help students feel confident and supported in their new environment.",
+          price: "32000DA",
+        },
       ],
     },
   ];
@@ -90,22 +109,22 @@ function OurServices() {
       id="service"
       className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48"
     >
-      <SectionHeader title="Our Services" />
+      <SectionHeader title="Study in Italy" />
 
       <div className="max-w-screen-2xl flex self-center flex-col w-full gap-8">
         {services.map((service) => (
           <div className="" key={service.id}>
-            <div className="text-2xl md:text-4xl font-semibold mb-4">
+            {/* <div className="text-2xl md:text-4xl font-semibold mb-4">
               {service.title}
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            </div> */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {service.procedures.map((procedure) => (
                 <div
                   key={procedure.id}
                   className="proc-card flex justify-between flex-col"
                 >
                   <div>
-                    <div className="text-xl font-semibold mb-5">
+                    <div className="text-2xl font-semibold mb-5 mt-3 text-green-500">
                       {procedure.title}
                     </div>
                     <p className="mb-12">{procedure.para}</p>
@@ -117,14 +136,14 @@ function OurServices() {
                     </div> */}
                   </div>
                   {/* <b>Prix: {procedure.price}</b> */}
-                  <Link
+                  {/* <Link
                     href={
                       "https://call.whatsapp.com/voice/XSFqQbFvBTeM4AZbNkHzAQ"
                     }
                     className="btn w-fit"
                   >
                     Apply Now
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </div>
