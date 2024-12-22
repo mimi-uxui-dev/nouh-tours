@@ -43,7 +43,7 @@ function Stats() {
             </div>
           </div>
 
-          <Link href={"/"} className="btn w-fit">
+          <Link href={"#service"} className="btn w-fit">
             Choose Procedure
           </Link>
         </div>

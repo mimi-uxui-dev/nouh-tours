@@ -18,8 +18,11 @@ export default function Home() {
       {/* <Aboutus /> */}
       <footer className="text-xl font-medium text-center pb-20">
         Made with ❤️ by{" "}
-        <Link href={"https://www.instagram.com/mimikhoudour_official/"}>
-          Mimi
+        <Link
+          className="text-green-700 underline"
+          href={"https://www.instagram.com/mimikhoudour_official/"}
+        >
+          Mimi K
         </Link>
       </footer>
     </div>
