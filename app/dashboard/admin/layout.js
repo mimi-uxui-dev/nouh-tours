@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function AdminLayout({ children }) {
   return (
-    <div className="mb-10 mt-48 w-full max-w-screen-xl h-fit min-h-fit flex justify-self-center flex-col">
-      <nav className="px-4 lg:px-0">
+    <div className="mb-10 px-4 mt-48 w-full max-w-screen-xl h-fit min-h-fit flex justify-self-center flex-col">
+      <nav className=" lg:px-0">
         {/* <Link className="btn mr-2" href={"/dashboard/admin"}>
           Admin Dashboard
         </Link> */}

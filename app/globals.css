@@ -94,23 +94,23 @@ a:hover {
 .btn {
   color: var(--darkGray);
   background-color: var(--lightGreen);
-  font-size: 1.125rem;
   /* height: 59px; */
   display: inline-block;
   border: 1px solid transparent;
 
-  @apply line-h-150 lg:px-6 lg:py-4  px-4 py-3 border-radius-100 semi-bold-text;
+  @apply lg:px-6 lg:py-4 px-4 py-3 border-radius-100 semi-bold-text;
 }
 
 .outline-btn-sm {
   background-color: transparent;
   color: var(--darkGray);
   border: 1px solid var(--darkGray);
-  font-size: 0.75rem;
   height: fit-content;
   display: inline-block;
   text-align: center;
-  @apply px-4 py-2 w-fit border-radius-100 semi-bold-text;
+  width: fit-content;
+  display: inline;
+  @apply px-4 py-2 w-full  border-radius-100 semi-bold-text;
 }
 
 .btn:hover,
@@ -134,8 +134,7 @@ a:hover {
   background-color: transparent;
   color: var(--darkGray);
   border: 1px solid var(--darkGray);
-  font-size: 1.125rem;
-  height: 59px;
+
   display: inline-block;
 
   @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
@@ -145,8 +144,7 @@ a:hover {
   background-color: transparent;
   color: white;
   border: 1px solid white;
-  font-size: 1.125rem;
-  height: 59px;
+
   display: inline-block;
 
   @apply line-h-150 px-6 py-4 border-radius-100 semi-bold-text;
@@ -161,7 +159,7 @@ a:hover {
 }
 
 form {
-  @apply my-10 flex flex-col w-96 self-center;
+  @apply my-10 flex flex-col w-full px-4 md:px-0 md:w-96 self-center;
 }
 
 form > button {
@@ -184,7 +182,7 @@ textarea {
 }
 
 h1 {
-  @apply text-5xl;
+  @apply text-2xl font-medium lg:text-4xl;
 }
 
 .hero-section {

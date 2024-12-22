@@ -85,8 +85,8 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div className="px-4 lg:px-0">
-      <form className="my-0 py-0 mt-3">
+    <div>
+      <form className="my-0 py-0 px-0 mt-4">
         <input
           type="text"
           placeholder="Search ..."
@@ -158,13 +158,13 @@ export default function AdminDashboard() {
                           href={`/dashboard/admin/editApplication/${univ._id}`}
                           className="outline-btn-sm"
                         >
-                          Edit ✏️
+                          Edit
                         </Link>
                         <button
                           onClick={() => handleDelete(univ._id)}
                           className="outline-btn-sm"
                         >
-                          Delete 🗑️
+                          Delete
                         </button>
                       </div>
                     </div>
