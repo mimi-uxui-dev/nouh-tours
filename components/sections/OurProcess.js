@@ -5,18 +5,18 @@ function OurProcess() {
   const process = [
     {
       id: "01",
-      title: "Create an Account",
-      text: "Lorem ipsum dolor sit amet consectetur. At lorem molestie ac phasellus augue ullamcorper posuere enim tristique. ",
+      title: "Consulting",
+      text: "After enrollment, our partners in Italy will contact you for a consultation to discuss university specializations and options before finalizing the registration process.",
     },
     {
       id: "02",
-      title: "Create an Account",
-      text: "Lorem ipsum dolor sit amet consectetur. At lorem molestie ac phasellus augue ullamcorper posuere enim tristique. ",
+      title: "Account Creation",
+      text: "We create a personalized account for you on our website, giving you access to a dedicated dashboard where you can track the progress of your application and view all your information in one place.",
     },
     {
       id: "03",
-      title: "Create an Account",
-      text: "Lorem ipsum dolor sit amet consectetur. At lorem molestie ac phasellus augue ullamcorper posuere enim tristique. ",
+      title: "We Take Care of Everything ",
+      text: "Once you submit your documents, we take care of the entire university application process, handling everything on your behalf to ensure a smooth and successful admission.",
     },
   ];
   return (
@@ -36,7 +36,7 @@ function OurProcess() {
               <p className="absolute right-10 top-10 sectionHeader">{p.id}</p>
               <div className="">
                 <b className="text-2xl font-bold">{p.title}</b>
-                <p className="mt-4">{p.text}</p>
+                <p className="mt-4 min-h-28">{p.text}</p>
               </div>
             </div>
           ))}

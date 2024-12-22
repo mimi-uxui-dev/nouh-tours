@@ -35,7 +35,7 @@ function OurServices() {
       procedures: [
         {
           id: 6,
-          title: "BAC en Cours",
+          title: "University Enrollment",
           dossier: [
             "Original + Translation in English or Italian",
             "Relever de BAC",
@@ -43,11 +43,12 @@ function OurServices() {
             "Passport",
             "Photo Biometric",
           ],
+          para: "We assist with enrollment in multiple universities, ensuring guaranteed admission in all offered specializations. This service provides students with diverse academic options to secure their preferred field of study.",
           price: "3000DA",
         },
         {
           id: 7,
-          title: "Bachelier et L1",
+          title: "Visa Application Assistance",
           dossier: [
             "Original + Translation in English or Italian",
             "Diplome de BAC",
@@ -59,11 +60,12 @@ function OurServices() {
             "Letter de reccomdation (optional)",
             "Test IELTS (optional)",
           ],
+          para: "We help you prepare all the necessary documents for your visa application and guide you through every step of the visa process, ensuring a smooth and successful experience.",
           price: "10 000DA",
         },
         {
           id: 8,
-          title: "L2, L3, M1 et M2",
+          title: "Scholarships ",
           dossier: [
             "Original + Translation in English or Italian",
             "Diplome de BAC",
@@ -77,6 +79,7 @@ function OurServices() {
             "Letter de reccomdation (optional)",
             "Test IELTS (optional)",
           ],
+          para: "We provide access to scholarships and ensure you can study in Italy for free, covering university tuition fees. Our support guarantees a cost-free academic experience, allowing you to focus entirely on your studies.",
           price: "32000DA",
         },
       ],
@@ -105,12 +108,13 @@ function OurServices() {
                     <div className="text-xl font-semibold mb-5">
                       {procedure.title}
                     </div>
-                    <b className="mb-3">Dossier</b>
-                    <div className="mb-3">
+                    <p className="mb-12">{procedure.para}</p>
+                    {/* <b className="mb-3">Dossier</b> */}
+                    {/* <div className="mb-3">
                       {procedure.dossier.map((p) => (
                         <li key={p.id}>{p}</li>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                   {/* <b>Prix: {procedure.price}</b> */}
                   <Link
