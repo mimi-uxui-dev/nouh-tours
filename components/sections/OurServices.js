@@ -4,30 +4,30 @@ import SectionHeader from "../SectionHeader";
 
 function OurServices() {
   const services = [
-    {
-      id: 1,
-      title: "France",
-      procedures: [
-        {
-          id: 3,
-          title: "BAC en Cours",
-          dossier: ["paper 1", "paper 2", "paper 3"],
-          price: "3000DA",
-        },
-        {
-          id: 4,
-          title: "Bachelier et L1",
-          dossier: ["paper 1", "paper 2", "paper 3"],
-          price: "10 000DA",
-        },
-        {
-          id: 5,
-          title: "L2, L3, M1 et M2",
-          dossier: ["paper 1", "paper 2", "paper 3"],
-          price: "32000DA",
-        },
-      ],
-    },
+    // {
+    //   id: 1,
+    //   title: "France",
+    //   procedures: [
+    //     {
+    //       id: 3,
+    //       title: "BAC en Cours",
+    //       dossier: ["paper 1", "paper 2", "paper 3"],
+    //       price: "3000DA",
+    //     },
+    //     {
+    //       id: 4,
+    //       title: "Bachelier et L1",
+    //       dossier: ["paper 1", "paper 2", "paper 3"],
+    //       price: "10 000DA",
+    //     },
+    //     {
+    //       id: 5,
+    //       title: "L2, L3, M1 et M2",
+    //       dossier: ["paper 1", "paper 2", "paper 3"],
+    //       price: "32000DA",
+    //     },
+    //   ],
+    // },
     {
       id: 2,
       title: "Italy",
@@ -35,19 +35,47 @@ function OurServices() {
         {
           id: 6,
           title: "BAC en Cours",
-          dossier: ["paper 1", "paper 2", "paper 3"],
+          dossier: [
+            "Original + Translation in English or Italian",
+            "Relever de BAC",
+            "Diplome de BAC",
+            "Passport",
+            "Photo Biometric",
+          ],
           price: "3000DA",
         },
         {
           id: 7,
           title: "Bachelier et L1",
-          dossier: ["paper 1", "paper 2", "paper 3"],
+          dossier: [
+            "Original + Translation in English or Italian",
+            "Diplome de BAC",
+            "Relever de BAC",
+            "Relever de note",
+            "Diplome de Licence",
+            "Passport",
+            "Photo Biometric",
+            "Letter de reccomdation (optional)",
+            "Test IELTS (optional)",
+          ],
           price: "10 000DA",
         },
         {
           id: 8,
           title: "L2, L3, M1 et M2",
-          dossier: ["paper 1", "paper 2", "paper 3"],
+          dossier: [
+            "Original + Translation in English or Italian",
+            "Diplome de BAC",
+            "Relever de BAC",
+            "Relever de note license",
+            "Diplome de Licence",
+            "Relever de note Master",
+            "Diplome de Master",
+            "Passport",
+            "Photo Biometric",
+            "Letter de reccomdation (optional)",
+            "Test IELTS (optional)",
+          ],
           price: "32000DA",
         },
       ],
@@ -75,7 +103,7 @@ function OurServices() {
                       <li key={p.id}>{p}</li>
                     ))}
                   </div>
-                  <b>Prix: {procedure.price}</b>
+                  {/* <b>Prix: {procedure.price}</b> */}
                 </div>
               ))}
             </div>

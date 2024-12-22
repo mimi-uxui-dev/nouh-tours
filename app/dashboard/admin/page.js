@@ -75,7 +75,7 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div>
+    <div className="px-4 lg:px-0">
       {loading ? (
         <div className="text-center text-4xl pt-4">Loading...</div>
       ) : users.length === 0 ? (
@@ -84,20 +84,23 @@ export default function AdminDashboard() {
         </div>
       ) : (
         users?.map((user) => (
-          <div className="grid " key={user._id}>
+          <div
+            className="grid overflow-x-scroll lg:overflow-x-hidden"
+            key={user._id}
+          >
             {/* Users Row */}
-            <div className="py-2 px-2 flex flex-row items-center justify-between bg-darkGray mt-6">
+            <div className="py-2 px-2 flex flex-row items-center justify-between bg-darkGray mt-6 ">
               <div className="px-6 flex gap-4 font-medium w-full">
                 <div>
                   {user.fullName} &nbsp; / &nbsp; {user.email}
                 </div>
               </div>
-              <div className="flex gap-2 w-full justify-end">
+              <div className="flex gap-2 w-full justify-end ">
                 <Link
                   className="btn "
                   href={`/dashboard/admin/createApplication/${user._id}`}
                 >
-                  Add Application
+                  Add University
                 </Link>
                 <button
                   onClick={() => handleDeleteUser(user._id)}
@@ -108,15 +111,15 @@ export default function AdminDashboard() {
               </div>
             </div>
             {/* Univ Row */}
-            <div className="bg-slate-200 flex flex-col justify-between w-full px-12 py-2 font-medium">
+            <div className="bg-slate-200 flex flex-col justify-between w-full px-12 py-2 font-medium ">
               {user.universitiesAppliedTo.length === 0 ? (
                 ""
               ) : (
-                <div className="w-full grid grid-cols-6 text-green-600 gap-2 mb-2">
-                  <div>Name</div>
+                <div className="w-full grid grid-cols-6 text-green-600 gap-2 mb-2 ">
+                  <div>University</div>
                   <div>Specialty</div>
-                  <div>PreEnrollment</div>
                   <div>Status</div>
+                  <div>PreEnrollment</div>
                   <div>Note</div>
                   <div>Actions</div>
                 </div>
@@ -130,12 +133,12 @@ export default function AdminDashboard() {
                 user.universitiesAppliedTo?.map((univ) => (
                   <div
                     key={univ._id}
-                    className=" w-full grid grid-cols-6 font-medium py-1 gap-2"
+                    className=" w-full grid grid-cols-6 font-medium py-1 gap-2 min-w-800px"
                   >
                     <div>{univ.name}</div>
                     <div>{univ.specialty}</div>
-                    <div>{univ.preEnrollment}</div>
                     <div>{univ.status}</div>
+                    <div>{univ.preEnrollment}</div>
                     <div>{univ.note}</div>
                     <div className="flex gap-2">
                       <Link

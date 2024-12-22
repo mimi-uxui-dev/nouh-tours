@@ -15,20 +15,19 @@ function Nav() {
           <Image
             src={logo}
             alt="nouh tours logo"
-            className="h-10 w-full lg:h-14 "
+            className="h-auto w-full lg:h-14"
           />
         </Link>
 
         <div className="flex space-x-10 items-center ">
-          <div className="lg:flex space-x-10 items-center hidden">
+          <div className="lg:flex space-x-10 items-center hidden ">
             <Link href={"/"}>Home</Link>
-            <Link href={"/"}>Our Services</Link>
+            <Link href={"#service"}>Our Services</Link>
             <Link href={"/"}>Our Process</Link>
             <Link href={"/"}>Contact</Link>
-            <Link href={"/"}>About Us</Link>
           </div>
           {status === "authenticated" ? (
-            <>
+            <div className="flex gap-3 md:gap-12">
               <Link
                 href={`/dashboard/${
                   data?.user?.role === "admin" ? "admin" : "user"
@@ -37,7 +36,7 @@ function Nav() {
                 Dashboard
               </Link>
               <a onClick={() => signOut({ callbackUrl: "/login" })}>Logout</a>
-            </>
+            </div>
           ) : (
             <Link className="btn" href={"/login"}>
               Login

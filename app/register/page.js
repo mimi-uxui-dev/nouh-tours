@@ -54,7 +54,7 @@ export default function Register() {
   };
 
   return (
-    <div className="my-10 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">
+    <div className="mb-10 mt-48 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit min-h-fit flex flex-col justify-self-center">
       <Link className="pl-14 mb-10" href="/dashboard/admin">
         ← Go Back
       </Link>

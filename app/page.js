@@ -1,10 +1,10 @@
-import Aboutus from "@/components/sections/Aboutus";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import OurProcess from "@/components/sections/OurProcess";
 import OurServices from "@/components/sections/OurServices";
 import Quote from "@/components/sections/Quote";
 import Stats from "@/components/sections/Stats";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -16,6 +16,12 @@ export default function Home() {
       <Stats />
       <Contact />
       {/* <Aboutus /> */}
+      <footer className="text-xl font-medium text-center pb-20">
+        Made with ❤️ by{" "}
+        <Link href={"https://www.instagram.com/mimikhoudour_official/"}>
+          Mimi
+        </Link>
+      </footer>
     </div>
   );
 }

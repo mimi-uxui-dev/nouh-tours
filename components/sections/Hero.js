@@ -15,15 +15,11 @@ function Hero() {
                 Study in Italy with Nouh –<br />
                 Your Journey Starts Here!
               </h1>
-              <p className="text-xl font-medium mb-20">
+              <p className="text-xl font-medium mb-20 max-w-700">
                 Nouh specializes in guiding students to pursue their dreams of
-                studying in
-                <br />
-                Italy. From selecting the right university to navigating visa
-                applications,
-                <br />
-                Nouh ensures a smooth and stress-free process every step of the
-                way.
+                studying in Italy. From selecting the right university to
+                navigating visa applications, Nouh ensures a smooth and
+                stress-free process every step of the way.
               </p>
               <Link className="btn" href={"/"}>
                 Let&apos;s Start

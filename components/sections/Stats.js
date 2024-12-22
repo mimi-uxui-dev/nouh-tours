@@ -23,23 +23,19 @@ function Stats() {
   ];
   return (
     <article className="2xl:px-0 px-5 w-full mt-40 flex flex-col mb-48">
-      <div className="statsbg max-w-screen-2xl flex gap-20 self-center w-full px-6 py-16 lg:p-20 relative flex-col-reverse lg:flex-row">
-        <Image
+      <div className="statsbg max-w-screen-2xl flex self-center w-full px-6 py-16 lg:p-20 relative flex-col-reverse lg:flex-row align-center">
+        {/* <Image
           src={nouh}
           alt="nouh"
           className="lg:absolute relative  hidden xl:flex lg:bottom-0 lg:right-20"
-        />
-        <div className=" flex flex-col gap-16">
+        /> */}
+        <div className=" flex flex-col gap-16 w-full items-center">
           <div className="flex flex-col gap-12">
-            <h1 className="">
-              Join Thousands Of
-              <br />
-              Satisfied Clients
-            </h1>
+            <h1 className="text-center">Join Thousands Of Satisfied Clients</h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
               {stats.map((s) => (
-                <div key={s.id} className="flex flex-col gap-1">
+                <div key={s.id} className="flex flex-col gap-1 items-center">
                   <p className="number">{s.number}</p>
                   <p className="text">{s.text}</p>
                 </div>

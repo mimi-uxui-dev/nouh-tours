@@ -32,35 +32,38 @@ export default function UserDashboard() {
   }, []);
 
   return (
-    <div className="my-10 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit flex flex-col justify-self-center">
+    <div className="mb-10 mt-48 py-16 bg-green-100 rounded-2xl w-full max-w-screen-xl h-fit flex flex-col justify-self-center">
       <Link className="pl-14 mb-10" href="/">
         ← Go Back
       </Link>
-      <h1 className="text-center">
+      <h1 className="text-center text-2xl lg:4xl">
         {user?.fullName} Dashboard <br />
       </h1>
 
       {loading ? (
         <div className="text-center text-4xl pt-4">Loading...</div>
       ) : moi.universitiesAppliedTo?.length !== 0 ? (
-        <div key={user?.email} className="mt-10 px-4">
-          <div className="w-full grid grid-cols-5 text-green-600 font-bold gap-2 mb-2">
-            <div>Name</div>
+        <div
+          key={user?.email}
+          className="mt-10 px-4 overflow-x-scroll lg:overflow-x-hidden"
+        >
+          <div className="w-full grid grid-cols-5 text-green-600 font-bold gap-2 mb-2 min-w-800px">
+            <div>University</div>
             <div>Specialty</div>
-            <div>PreEnrollment</div>
             <div>Status</div>
+            <div>PreEnrollment</div>
             <div>Note</div>
           </div>
 
           {moi.universitiesAppliedTo?.map((univ) => (
             <div
               key={univ._id}
-              className="w-full grid grid-cols-5 font-medium py-2 gap-2 border-b h-fit"
+              className="w-full grid grid-cols-5 font-medium py-2 gap-2 border-b h-fit min-w-800px"
             >
               <div>{univ.name}</div>
               <div>{univ.specialty}</div>
-              <div>{univ.preEnrollment}</div>
               <div>{univ.status}</div>
+              <div>{univ.preEnrollment}</div>
               <div>{univ.note}</div>
             </div>
           ))}
