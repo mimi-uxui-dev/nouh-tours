@@ -1,6 +1,7 @@
 import React from "react";
 
 import SectionHeader from "../SectionHeader";
+import Link from "next/link";
 
 function OurServices() {
   const services = [
@@ -96,17 +97,25 @@ function OurServices() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {service.procedures.map((procedure) => (
-                <div key={procedure.id} className="proc-card">
-                  <div className="text-xl font-semibold mb-3">
-                    {procedure.title}
-                  </div>
-                  <b className="mb-3">Dossier</b>
-                  <div className="mb-3">
-                    {procedure.dossier.map((p) => (
-                      <li key={p.id}>{p}</li>
-                    ))}
+                <div
+                  key={procedure.id}
+                  className="proc-card flex justify-between flex-col"
+                >
+                  <div>
+                    <div className="text-xl font-semibold mb-5">
+                      {procedure.title}
+                    </div>
+                    <b className="mb-3">Dossier</b>
+                    <div className="mb-3">
+                      {procedure.dossier.map((p) => (
+                        <li key={p.id}>{p}</li>
+                      ))}
+                    </div>
                   </div>
                   {/* <b>Prix: {procedure.price}</b> */}
+                  <Link href={""} className="btn w-fit">
+                    Apply Now
+                  </Link>
                 </div>
               ))}
             </div>

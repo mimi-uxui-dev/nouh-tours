@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "google-map-react": "^2.2.1",
     "mongoose": "^8.8.1",
     "next": "15.0.3",
     "next-auth": "^4.24.10",
