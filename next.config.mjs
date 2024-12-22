@@ -1,6 +1,6 @@
-const config = require("./config.js");
+import config from "./config.js";
 
-const { DB_URI, API, NEXTAUTH_SECRET } = config;
+const { DB_URI, API, NEXTAUTH_SECRET } = config; // Destructure to get DB_URI
 
 const nextConfig = {
   env: {
@@ -10,4 +10,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
