@@ -1,4 +1,4 @@
-import config from "@/config";
+import config from "./config.js";
 
 const { DB_URI, API, NEXTAUTH_SECRET } = config; // Destructure to get DB_URI
 
