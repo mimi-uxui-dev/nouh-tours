@@ -52,7 +52,7 @@ export default function EditApplication() {
           note: application.note || "",
         });
       } catch (err) {
-        setError(err.message);
+        // setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -71,8 +71,8 @@ export default function EditApplication() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
+    // setError("");
+    // setSuccess("");
 
     try {
       const res = await fetch(`/api/admin/univApplication`, {
@@ -95,7 +95,7 @@ export default function EditApplication() {
 
       router.push("/dashboard/admin");
     } catch (err) {
-      setError(err.message);
+      // setError(err.message);
     }
   };
 
