@@ -113,7 +113,12 @@ function OurServices() {
                     </div>
                   </div>
                   {/* <b>Prix: {procedure.price}</b> */}
-                  <Link href={""} className="btn w-fit">
+                  <Link
+                    href={
+                      "https://call.whatsapp.com/voice/XSFqQbFvBTeM4AZbNkHzAQ"
+                    }
+                    className="btn w-fit"
+                  >
                     Apply Now
                   </Link>
                 </div>
