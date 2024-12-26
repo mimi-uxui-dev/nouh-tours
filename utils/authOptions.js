@@ -9,7 +9,7 @@ export const authOptions = {
     strategy: "jwt",
   },
   providers: [
-    CredentialsProvider({
+    CredentialsProvider.default({
       async authorize(credentials, req) {
         await dbConnect();
         const { email, password } = credentials;
