@@ -24,7 +24,7 @@ export default withAuth(
     // }
 
     res.headers.append("Access-Control-Allow-Credentials", "true");
-    res.headers.append("Access-Control-Allow-Origin", "https://nouhtours.com"); // replace this your actual origin
+    res.headers.append("Access-Control-Allow-Origin", "https://nouhtours.com");
     res.headers.append(
       "Access-Control-Allow-Methods",
       "GET,DELETE,PATCH,POST,PUT"
