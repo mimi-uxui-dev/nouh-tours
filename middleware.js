@@ -19,12 +19,9 @@ export default withAuth(
     const userRole = req?.nextauth?.token?.user?.role;
 
     // cors
-    // if (url?.includes("/api")) {
-    //   NextResponse.next().headers.append(
-    //     "Access-Control-Allow-Origin",
-    //     "https://www.nouhtours.com"
-    //   );
-    // }
+    if (url?.includes("/api")) {
+      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+    }
 
     if (url?.includes("/admin") && userRole !== "admin") {
       return NextResponse.redirect(new URL("/", req.url));
