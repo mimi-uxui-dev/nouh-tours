@@ -17,8 +17,15 @@ export default function UserDashboard() {
     try {
       const res = await fetch(`${process.env.API}/users`, {
         method: "GET",
-        redirect: "follow", // Allows following the redirect
+        redirect: "follow",
       });
+
+      res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins (adjust as needed)
+      res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+      res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Content-Type, Authorization"
+      );
 
       const data = await res.json();
       const me = data.filter((person) => person._id === userID);

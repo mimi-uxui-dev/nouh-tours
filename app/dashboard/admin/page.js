@@ -16,6 +16,14 @@ export default function AdminDashboard() {
         method: "GET",
         redirect: "follow", // Allows following the redirect
       });
+
+      res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins (adjust as needed)
+      res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+      res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Content-Type, Authorization"
+      );
+
       const data = await res.json();
       const students = data.filter((user) => user.role !== "admin");
       setUsers(students);
