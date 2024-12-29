@@ -15,7 +15,11 @@ export default function UserDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.API}/users/`);
+      const res = await fetch(`${process.env.API}/users/`, {
+        method: "GET",
+        redirect: "follow", // Allows following the redirect
+      });
+
       const data = await res.json();
       const me = data.filter((person) => person._id === userID);
       setMoi(me[0]);
