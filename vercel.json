@@ -15,5 +15,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/api/users",
+      "destination": "https://nouhtours.com/api/users/",
+      "permanent": true
+    }
   ]
 }

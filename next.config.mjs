@@ -10,7 +10,14 @@ const nextConfig = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     SECRET: process.env.SECRET,
   },
-
+  async rewrites() {
+    return [
+      {
+        source: "/api/users",
+        destination: "https://nouhtours.com/api/users",
+      },
+    ];
+  },
   // async headers() {
   //   return [
   //     {
