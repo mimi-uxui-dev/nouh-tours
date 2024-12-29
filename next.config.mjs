@@ -10,6 +10,7 @@ const nextConfig = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     SECRET: process.env.SECRET,
   },
+
   // async headers() {
   //   return [
   //     {
