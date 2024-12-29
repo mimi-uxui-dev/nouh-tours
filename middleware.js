@@ -19,23 +19,12 @@ export default withAuth(
     const userRole = req?.nextauth?.token?.user?.role;
 
     // cors
-    if (url?.includes("/api")) {
-      NextResponse.next().headers.append(
-        "Access-Control-Allow-Origin",
-        "https://www.nouhtours.com"
-      );
-    }
-
-    res.headers.append("Access-Control-Allow-Credentials", "true");
-    res.headers.append("Access-Control-Allow-Origin", "*");
-    res.headers.append(
-      "Access-Control-Allow-Methods",
-      "GET,DELETE,PATCH,POST,PUT"
-    );
-    res.headers.append(
-      "Access-Control-Allow-Headers",
-      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-    );
+    // if (url?.includes("/api")) {
+    //   NextResponse.next().headers.append(
+    //     "Access-Control-Allow-Origin",
+    //     "https://www.nouhtours.com"
+    //   );
+    // }
 
     if (url?.includes("/admin") && userRole !== "admin") {
       return NextResponse.redirect(new URL("/", req.url));

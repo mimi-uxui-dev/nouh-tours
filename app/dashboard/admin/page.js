@@ -12,12 +12,9 @@ export default function AdminDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.API}/users`, {
-        method: "GET",
-        redirect: "follow", // Allows following the redirect
-      });
+      const res = await fetch(`${process.env.API}/users`);
 
-      res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins (adjust as needed)
+      res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
       res.setHeader(
         "Access-Control-Allow-Headers",

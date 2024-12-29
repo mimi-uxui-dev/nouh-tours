@@ -15,10 +15,7 @@ export default function UserDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.API}/users`, {
-        method: "GET",
-        redirect: "follow",
-      });
+      const res = await fetch(`${process.env.API}/users`);
 
       res.setHeader("Access-Control-Allow-Origin", "*"); // Allow all origins (adjust as needed)
       res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
