@@ -22,7 +22,7 @@ export default withAuth(
     if (url?.includes("/api")) {
       NextResponse.next().headers.append(
         "ACCESS-CONTROL-ALLOW-ORIGIN",
-        "https://www.nouhtours.com"
+        "https://nouhtours.com"
       );
     }
 
