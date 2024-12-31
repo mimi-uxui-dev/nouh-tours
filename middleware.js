@@ -18,11 +18,8 @@ export default withAuth(
     const url = req.nextUrl.pathname;
     const userRole = req?.nextauth?.token?.user?.role;
 
-    if (url?.includes("/api/")) {
-      NextResponse.next().headers.append(
-        "Access-Control-Allow-Origin",
-        "https://www.nouhtours.com"
-      );
+    if (url?.includes("/api")) {
+      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
 
       return NextResponse.redirect(new URL("/api/"), req.url);
     }
