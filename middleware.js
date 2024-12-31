@@ -21,7 +21,7 @@ export default withAuth(
     if (url?.includes("/api")) {
       return NextResponse.next().headers.append(
         "Access-Control-Allow-Origin",
-        "*"
+        "https://www.nouhtours.com"
       );
     }
 
