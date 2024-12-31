@@ -20,14 +20,14 @@ const nextConfig = {
       },
     ];
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/api/:path*",
-  //       destination: "https://nouhtours.com/:path*",
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://nouhtours.com/:path*",
+      },
+    ];
+  },
   // async headers() {
   //   return [
   //     {
