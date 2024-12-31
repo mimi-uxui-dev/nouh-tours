@@ -15,12 +15,11 @@ export default function UserDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`api/users`);
+      const res = await fetch(`${process.env.API}/users`);
 
       const data = await res.json();
       const me = data.filter((person) => person._id === userID);
       setMoi(me[0]);
-      // console.log("🚀 Hna ->>>>>", me[0].email);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     } finally {

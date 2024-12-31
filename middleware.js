@@ -20,7 +20,10 @@ export default withAuth(
 
     // cors
     if (url?.includes("/api/")) {
-      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+      return NextResponse.next().headers.append(
+        "Access-Control-Allow-Origin",
+        "*"
+      );
     }
 
     if (url?.includes("/admin") && userRole !== "admin") {
