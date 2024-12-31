@@ -8,6 +8,7 @@ export const config = {
     "/dashboard/admin/:path*",
     "/api/user/:path*",
     "/api/admin/:path*",
+    "/api/users",
   ],
 };
 
@@ -18,10 +19,13 @@ export default withAuth(
     const url = req.nextUrl.pathname;
     const userRole = req?.nextauth?.token?.user?.role;
 
-    if (url?.includes("/api")) {
-      NextResponse.next().headers.append("Access-Control-Allow-Origin", "*");
+    if (url?.includes("api")) {
+      return NextResponse.next().headers.append(
+        "ACCESS-CONTROL-ALLOW-ORIGIN",
+        "*"
+      );
 
-      return NextResponse.redirect(new URL("/api/"), req.url);
+      // return NextResponse.redirect(new URL("/api/"), req.url);
     }
 
     if (url?.includes("/admin") && userRole !== "admin") {
