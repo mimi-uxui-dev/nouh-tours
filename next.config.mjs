@@ -15,7 +15,7 @@ const nextConfig = {
             value: "nouhtours.com", // Match non-www domain
           },
         ],
-        destination: "https://www.nouhtours.com/:path*",
+        destination: "http://www.nouhtours.com/:path*",
         permanent: true,
       },
     ];
