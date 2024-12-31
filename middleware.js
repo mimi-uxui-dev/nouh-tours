@@ -18,7 +18,6 @@ export default withAuth(
     const url = req.nextUrl.pathname;
     const userRole = req?.nextauth?.token?.user?.role;
 
-    cors;
     if (url?.includes("/api")) {
       return NextResponse.next().headers.append(
         "Access-Control-Allow-Origin",
