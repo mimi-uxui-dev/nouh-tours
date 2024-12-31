@@ -8,7 +8,7 @@ export const config = {
     "/dashboard/admin/:path*",
     "/api/user/:path*",
     "/api/admin/:path*",
-    "/api/users",
+    // "/api/users",
   ],
 };
 
