@@ -20,12 +20,7 @@ export default withAuth(
     const userRole = req?.nextauth?.token?.user?.role;
 
     if (url?.includes("api")) {
-      return NextResponse.next().headers.append(
-        "ACCESS-CONTROL-ALLOW-ORIGIN",
-        "*"
-      );
-
-      // return NextResponse.redirect(new URL("/api/"), req.url);
+      NextResponse.next().headers.append("ACCESS-CONTROL-ALLOW-ORIGIN", "*");
     }
 
     if (url?.includes("/admin") && userRole !== "admin") {
