@@ -12,7 +12,7 @@ export default function AdminDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`/users`);
+      const res = await fetch(`api/users`);
 
       const data = await res.json();
       const students = data.filter((user) => user.role !== "admin");
