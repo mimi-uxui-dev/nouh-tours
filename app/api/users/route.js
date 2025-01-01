@@ -8,7 +8,6 @@ export async function GET() {
   try {
     const users = await User.find().populate("universitiesAppliedTo");
 
-    // Construct the response with CORS headers
     const response = NextResponse.json(users, { status: 200 });
     response.headers.set(
       "Access-Control-Allow-Origin",

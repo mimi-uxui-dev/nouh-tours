@@ -19,20 +19,10 @@ export default withAuth(
     const url = req.nextUrl.pathname;
     const userRole = req?.nextauth?.token?.user?.role;
 
-    // if (url?.includes("/api")) {
-    //   NextResponse.next().headers.append(
-    //     "ACCESS-CONTROL-ALLOW-ORIGIN",
-    //     "https://nouhtours.com"
-    //   );
-    // }
-
     if (url?.includes("/api")) {
       const response = NextResponse.next();
 
-      response.headers.set(
-        "Access-Control-Allow-Origin",
-        "https://nouhtours.com"
-      );
+      response.headers.set("Access-Control-Allow-Origin", "*");
       response.headers.set("Access-Control-Allow-Credentials", "true");
       response.headers.set(
         "Access-Control-Allow-Methods",
