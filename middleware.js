@@ -27,22 +27,21 @@ export default withAuth(
     // }
 
     if (url?.includes("/api")) {
-      const res = NextResponse.next();
+      const response = NextResponse.next();
 
-      res.headers.append(
+      response.headers.set(
         "Access-Control-Allow-Origin",
         "https://nouhtours.com"
       );
-      res.headers.append("Access-Control-Allow-Credentials", "true");
-      res.headers.append(
+      response.headers.set("Access-Control-Allow-Credentials", "true");
+      response.headers.set(
         "Access-Control-Allow-Methods",
-        "GET,DELETE,PATCH,POST,PUT"
+        "GET, DELETE, PATCH, POST, PUT"
       );
-      res.headers.append(
+      response.headers.set(
         "Access-Control-Allow-Headers",
         "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
       );
-
       return res;
     }
 
