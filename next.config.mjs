@@ -17,6 +17,14 @@ const nextConfig = {
         ],
         destination: "https://www.nouhtours.com/:path*",
         permanent: true,
+        // Exclude API routes from this redirect
+        has: [
+          {
+            type: "query",
+            key: "path",
+            value: "^((?!api).)*$",
+          },
+        ],
       },
     ];
   },
