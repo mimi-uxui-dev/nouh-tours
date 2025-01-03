@@ -34,6 +34,15 @@ export default withAuth(
         "Access-Control-Allow-Headers",
         "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
       );
+
+      // Handle preflight requests
+      if (req.method === "OPTIONS") {
+        return new Response(null, {
+          headers: response.headers,
+          status: 204,
+        });
+      }
+
       return response;
     }
 
