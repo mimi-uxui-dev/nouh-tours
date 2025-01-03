@@ -11,7 +11,7 @@ export async function GET() {
     const response = NextResponse.json(users, { status: 200 });
     response.headers.set(
       "Access-Control-Allow-Origin",
-      "https://nouhtours.com"
+      "https://www.nouhtours.com"
     );
     response.headers.set("Access-Control-Allow-Credentials", "true");
     response.headers.set(
