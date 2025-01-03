@@ -12,7 +12,7 @@ export default function AdminDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users`, {
+      const res = await fetch(`${process.env.API}/users`, {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "https://www.nouhtours.com",
