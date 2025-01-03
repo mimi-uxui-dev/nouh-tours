@@ -1,6 +1,5 @@
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
-// export { default } from "next-auth/middleware";
 
 export const config = {
   matcher: [
@@ -8,7 +7,7 @@ export const config = {
     "/dashboard/admin/:path*",
     "/api/user/:path*",
     "/api/admin/:path*",
-    // "/api/users",
+    "/api/users",
   ],
 };
 
@@ -22,7 +21,10 @@ export default withAuth(
     if (url?.includes("/api")) {
       const response = NextResponse.next();
 
-      response.headers.set("Access-Control-Allow-Origin", "*");
+      response.headers.set(
+        "Access-Control-Allow-Origin",
+        "https://www.nouhtours.com"
+      );
       response.headers.set("Access-Control-Allow-Credentials", "true");
       response.headers.set(
         "Access-Control-Allow-Methods",
@@ -32,12 +34,14 @@ export default withAuth(
         "Access-Control-Allow-Headers",
         "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
       );
-      return res;
+      return response;
     }
 
     if (url?.includes("/admin") && userRole !== "admin") {
       return NextResponse.redirect(new URL("/", req.url));
     }
+
+    return NextResponse.next();
   },
   {
     callbacks: {
@@ -45,6 +49,7 @@ export default withAuth(
         if (!token) {
           return false;
         }
+        return true;
       },
     },
   }
