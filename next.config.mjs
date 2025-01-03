@@ -12,7 +12,7 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "https://nouhtours.com", // Match non-www domain
+            value: "nouhtours.com", // Match non-www domain
           },
         ],
         destination: "https://www.nouhtours.com/:path*",
@@ -33,7 +33,7 @@ const nextConfig = {
           },
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET,DELETE,PATCH,POST,PUT",
+            value: "GET,DELETE,PATCH,POST,PUT,OPTIONS",
           },
           {
             key: "Access-Control-Allow-Headers",

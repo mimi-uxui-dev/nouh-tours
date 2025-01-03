@@ -15,7 +15,6 @@ export default function AdminDashboard() {
       const res = await fetch(`${process.env.API}/users`, {
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://www.nouhtours.com",
         },
       });
 
@@ -24,12 +23,11 @@ export default function AdminDashboard() {
       }
 
       const data = await res.json();
-      console.log("🐦‍🔥🐦‍🔥🐦‍🔥 ", data);
       const students = data.filter((user) => user.role !== "admin");
       setUsers(students);
       setFilteredUsers(students);
     } catch (error) {
-      console.error("Failed to fetch users 😊 ", error);
+      console.error("Failed to fetch users:", error);
       toast.error("Failed to fetch users");
     } finally {
       setLoading(false);
