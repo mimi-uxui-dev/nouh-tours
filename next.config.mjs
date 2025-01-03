@@ -18,6 +18,11 @@ const nextConfig = {
         destination: "https://www.nouhtours.com/:path*",
         permanent: true,
       },
+      {
+        source: "/api/users",
+        destination: "/api/users", // Adjust this if you need a specific redirect
+        permanent: true,
+      },
     ];
   },
 
@@ -29,7 +34,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://nouhtours.com",
+            value: "*", // Allow all origins or specify your domain
           },
           {
             key: "Access-Control-Allow-Methods",
