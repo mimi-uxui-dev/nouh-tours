@@ -15,7 +15,6 @@ export default function AdminDashboard() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API}/users`, {
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://www.nouhtours.com",
         },
       });
 
@@ -49,24 +48,24 @@ export default function AdminDashboard() {
     setFilteredUsers(filtered);
   };
 
-  const handleDelete = async (applicationId) => {
-    if (!confirm("Are you sure you want to delete this application?")) return;
+  const handleDelete = async (userId) => {
+    if (!confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      const res = await fetch(`/api/admin/univApplication/${applicationId}`, {
+      const res = await fetch(`/api/admin/users/${userId}`, {
         method: "DELETE",
       });
 
       if (!res.ok) {
         const errorData = await res.json();
-        throw new Error(errorData.error || "Failed to delete application. 01");
+        throw new Error(errorData.error || "Failed to delete user.");
       }
 
-      toast.success("Application deleted successfully");
+      toast.success("User deleted successfully");
       fetchData(); // Refresh the data after deletion
     } catch (error) {
-      console.error("Failed to delete application:", error);
-      toast.error("Failed to delete application");
+      console.error("Failed to delete user:", error);
+      toast.error("Failed to delete user");
     }
   };
 
