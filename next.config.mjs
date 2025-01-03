@@ -10,21 +10,11 @@ const nextConfig = {
       {
         source: "/:path*",
         has: [
-          {
-            type: "host",
-            value: "nouhtours.com", // Match non-www domain
-          },
+          { type: "host", value: "nouhtours.com" },
+          { type: "query", key: "path", value: "^((?!api).)*$" },
         ],
         destination: "https://www.nouhtours.com/:path*",
         permanent: true,
-        // Exclude API routes from this redirect
-        has: [
-          {
-            type: "query",
-            key: "path",
-            value: "^((?!api).)*$",
-          },
-        ],
       },
     ];
   },
