@@ -12,7 +12,7 @@ const nextConfig = {
         has: [
           {
             type: "host",
-            value: "https://nouhtours.com", // Match non-www domain
+            value: "https://www.nouhtours.com", // Match non-www domain
           },
         ],
         destination: "https://www.nouhtours.com/:path*",
