@@ -28,7 +28,6 @@ export default function Register() {
           email,
           password,
         }),
-        mode: "no-cors",
       });
 
       if (!res.ok) {
