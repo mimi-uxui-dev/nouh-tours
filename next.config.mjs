@@ -14,7 +14,7 @@ const nextConfig = {
           { type: "query", key: "path", value: "^((?!api).)*$" },
         ],
         destination: "https://www.nouhtours.com/:path*",
-        permanent: true,
+        permanent: false,
       },
     ];
   },
