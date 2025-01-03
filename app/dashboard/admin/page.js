@@ -14,6 +14,7 @@ export default function AdminDashboard() {
       const res = await fetch(`${process.env.API}/users`, {
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
         mode: "no-cors",
       });
