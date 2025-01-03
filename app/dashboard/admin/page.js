@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import Link from "next/link";
 
 export default function AdminDashboard() {
   const [users, setUsers] = useState([]); // Original list of users
