@@ -31,3 +31,22 @@ export async function GET() {
     );
   }
 }
+
+export async function OPTIONS() {
+  const response = NextResponse.json({}, { status: 204 });
+  response.headers.set(
+    "Access-Control-Allow-Origin",
+    "https://www.nouhtours.com"
+  );
+  response.headers.set("Access-Control-Allow-Credentials", "true");
+  response.headers.set(
+    "Access-Control-Allow-Methods",
+    "GET, DELETE, PATCH, POST, PUT"
+  );
+  response.headers.set(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+
+  return response;
+}
