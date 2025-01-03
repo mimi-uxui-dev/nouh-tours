@@ -38,7 +38,13 @@ export default withAuth(
       // Handle preflight requests
       if (req.method === "OPTIONS") {
         return new Response(null, {
-          headers: response.headers,
+          headers: {
+            "Access-Control-Allow-Origin": "https://www.nouhtours.com",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "GET, DELETE, PATCH, POST, PUT",
+            "Access-Control-Allow-Headers":
+              "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+          },
           status: 204,
         });
       }
