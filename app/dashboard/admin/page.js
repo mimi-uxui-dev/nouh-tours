@@ -16,7 +16,7 @@ export default function AdminDashboard() {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
-        mode: "no-cors",
+        // mode: "no-cors",
       });
 
       if (!res.ok) {
