@@ -54,7 +54,7 @@ export default withAuth(
 
     // Role-based authorization for admin routes
     if (url?.includes("/admin") && userRole !== "admin") {
-      return NextResponse.redirect(new URL("/", req.url));
+      return NextResponse.redirect(new URL("/", req.url), 302);
     }
 
     return NextResponse.next();
