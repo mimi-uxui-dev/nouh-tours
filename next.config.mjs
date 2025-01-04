@@ -13,7 +13,7 @@ const nextConfig = {
           { type: "host", value: "nouhtours.com" },
           { type: "query", key: "path", value: "^((?!api).)*$" },
         ],
-        destination: "https://www.nouhtours.com/:path*",
+        destination: "https://nouhtours.com/:path*",
         permanent: true,
       },
     ];
@@ -26,7 +26,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://www.nouhtours.com", // Allow only your domain
+            value: "https://nouhtours.com", // Allow only your domain
           },
           {
             key: "Access-Control-Allow-Methods",

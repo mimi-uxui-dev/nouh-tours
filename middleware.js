@@ -38,7 +38,7 @@ export default withAuth(
       const response = NextResponse.next();
       response.headers.set(
         "Access-Control-Allow-Origin",
-        "https://www.nouhtours.com"
+        "https://nouhtours.com"
       );
       response.headers.set("Access-Control-Allow-Credentials", "true");
       response.headers.set(
