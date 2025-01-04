@@ -22,7 +22,7 @@ export default withAuth(
     if (req.method === "OPTIONS") {
       return new Response(null, {
         headers: {
-          "Access-Control-Allow-Origin": req.headers.get("origin") || "",
+          "Access-Control-Allow-Origin": "https://www.nouhtours.com",
           "Access-Control-Allow-Credentials": "true",
           "Access-Control-Allow-Methods":
             "GET, DELETE, PATCH, POST, PUT, OPTIONS",
@@ -38,7 +38,7 @@ export default withAuth(
       const response = NextResponse.next();
       response.headers.set(
         "Access-Control-Allow-Origin",
-        "https://nouhtours.com"
+        "https://www.nouhtours.com"
       );
       response.headers.set("Access-Control-Allow-Credentials", "true");
       response.headers.set(
@@ -49,7 +49,6 @@ export default withAuth(
         "Access-Control-Allow-Headers",
         "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
       );
-
       return response;
     }
 

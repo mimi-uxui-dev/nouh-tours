@@ -10,10 +10,12 @@ const nextConfig = {
       {
         source: "/:path*",
         has: [
-          { type: "host", value: "nouhtours.com" },
-          { type: "query", key: "path", value: "^((?!api).)*$" },
+          {
+            type: "host",
+            value: "nouhtours.com", // Match non-www domain
+          },
         ],
-        destination: "https://nouhtours.com/:path*",
+        destination: "https://www.nouhtours.com/:path*",
         permanent: true,
       },
     ];
@@ -26,7 +28,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://nouhtours.com", // Allow only your domain
+            value: "https://www.nouhtours.com", // Allow only your domain
           },
           {
             key: "Access-Control-Allow-Methods",

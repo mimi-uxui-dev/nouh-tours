@@ -11,12 +11,12 @@ export async function GET() {
     const response = NextResponse.json(users, { status: 200 });
     response.headers.set(
       "Access-Control-Allow-Origin",
-      "https://nouhtours.com"
+      "https://www.nouhtours.com"
     );
     response.headers.set("Access-Control-Allow-Credentials", "true");
     response.headers.set(
       "Access-Control-Allow-Methods",
-      "GET, DELETE, PATCH, POST, PUT"
+      "GET, DELETE, PATCH, POST, PUT, OPTIONS"
     );
     response.headers.set(
       "Access-Control-Allow-Headers",
@@ -34,11 +34,14 @@ export async function GET() {
 
 export async function OPTIONS() {
   const response = NextResponse.json({}, { status: 204 });
-  response.headers.set("Access-Control-Allow-Origin", "https://nouhtours.com");
+  response.headers.set(
+    "Access-Control-Allow-Origin",
+    "https://www.nouhtours.com"
+  );
   response.headers.set("Access-Control-Allow-Credentials", "true");
   response.headers.set(
     "Access-Control-Allow-Methods",
-    "GET, DELETE, PATCH, POST, PUT"
+    "GET, DELETE, PATCH, POST, PUT, OPTIONS"
   );
   response.headers.set(
     "Access-Control-Allow-Headers",
