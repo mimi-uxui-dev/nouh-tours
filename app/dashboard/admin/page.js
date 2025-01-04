@@ -15,7 +15,7 @@ export default function AdminDashboard() {
         headers: {
           "Content-Type": "application/json",
         },
-        // mode: "no-cors",
+        mode: "same-origin",
         // redirect: "follow",
       });
 
