@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import cors from "cors";
 
 export default function AdminDashboard() {
-  cors({
-    origin: "https://nouhtours.com",
-  });
-
   const [users, setUsers] = useState([]); // Original list of users
   const [filteredUsers, setFilteredUsers] = useState([]); // Filtered list of users
   const [loading, setLoading] = useState(false);
@@ -20,6 +15,7 @@ export default function AdminDashboard() {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
       });
 
       console.log("------->", res);
