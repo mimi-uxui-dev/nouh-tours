@@ -49,12 +49,13 @@ export default withAuth(
         "Access-Control-Allow-Headers",
         "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
       );
+
       return response;
     }
 
     // Role-based authorization for admin routes
     if (url?.includes("/admin") && userRole !== "admin") {
-      return NextResponse.redirect(new URL("/", req.url), 307 || 308);
+      return NextResponse.redirect(new URL("/", req.url));
     }
 
     return NextResponse.next();
