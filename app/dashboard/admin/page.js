@@ -16,7 +16,7 @@ export default function AdminDashboard() {
           "Content-Type": "application/json",
         },
         mode: "no-cors",
-        redirect: "follow",
+        redirect: "manual",
       });
 
       if (!res.ok) {
