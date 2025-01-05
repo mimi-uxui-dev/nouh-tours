@@ -4,7 +4,10 @@ import { NextResponse } from "next/server";
 
 // Helper function to add CORS headers
 function addCorsHeaders(response) {
-  response.headers.set("Access-Control-Allow-Origin", "*"); // Replace * with specific domain if needed, e.g., http://localhost:3000
+  response.headers.set(
+    "Access-Control-Allow-Origin",
+    "https://www.nouhtours.com"
+  ); // Replace * with specific domain if needed, e.g., http://localhost:3000
   response.headers.set("Access-Control-Allow-Credentials", "true");
   response.headers.set(
     "Access-Control-Allow-Methods",
