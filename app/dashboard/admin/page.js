@@ -52,6 +52,8 @@ export default function AdminDashboard() {
   };
 
   const handleDelete = async (userId) => {
+    console.log("Deleting user with id:", userId);
+
     if (!confirm("Are you sure you want to delete this user?")) return;
 
     try {
