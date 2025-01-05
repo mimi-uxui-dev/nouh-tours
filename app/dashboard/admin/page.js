@@ -18,7 +18,7 @@ export default function AdminDashboard() {
         credentials: "include",
       });
 
-      console.log("------->", res);
+      // console.log("------->", res);
 
       if (!res.ok) {
         throw new Error("Failed to fetch users");
