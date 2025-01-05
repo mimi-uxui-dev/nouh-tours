@@ -9,10 +9,7 @@ export async function GET() {
     const users = await User.find().populate("universitiesAppliedTo");
 
     const response = NextResponse.json(users, { status: 200 });
-    response.headers.set(
-      "Access-Control-Allow-Origin",
-      "https://www.nouhtours.com"
-    );
+    response.headers.set("Access-Control-Allow-Origin", "*");
     response.headers.set("Access-Control-Allow-Credentials", "true");
     response.headers.set(
       "Access-Control-Allow-Methods",
@@ -34,10 +31,7 @@ export async function GET() {
 
 export async function OPTIONS() {
   const response = NextResponse.json({}, { status: 204 });
-  response.headers.set(
-    "Access-Control-Allow-Origin",
-    "https://www.nouhtours.com"
-  );
+  response.headers.set("Access-Control-Allow-Origin", "*");
   response.headers.set("Access-Control-Allow-Credentials", "true");
   response.headers.set(
     "Access-Control-Allow-Methods",

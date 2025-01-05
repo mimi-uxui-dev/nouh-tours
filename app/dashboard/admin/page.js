@@ -15,7 +15,7 @@ export default function AdminDashboard() {
         headers: {
           "Content-Type": "application/json",
         },
-        // credentials: "include",
+        credentials: "include",
       });
 
       console.log("------->", res);
