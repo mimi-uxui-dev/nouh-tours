@@ -51,26 +51,51 @@ export default function AdminDashboard() {
     setFilteredUsers(filtered);
   };
 
-  const handleDelete = async (userId) => {
-    console.log("Deleting user with id:", userId);
-
-    if (!confirm("Are you sure you want to delete this user?")) return;
+  const handleDelete = async (applicationId) => {
+    if (!confirm("Are you sure you want to delete this application?")) return;
 
     try {
-      const res = await fetch(`/api/admin/users/${userId}`, {
+      const res = await fetch(`/api/admin/univApplication/${applicationId}`, {
         method: "DELETE",
       });
 
       if (!res.ok) {
         const errorData = await res.json();
-        throw new Error(errorData.error || "Failed to delete user.");
+        throw new Error(errorData.error || "Failed to delete application. 01");
       }
 
-      toast.success("User deleted successfully");
-      fetchData(); // Refresh the data after deletion
-    } catch (error) {
-      console.error("Failed to delete user:", error);
-      toast.error("Failed to delete user");
+      toast.success("Application deleted successfully!");
+      // router.refresh();
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to delete the application. 02");
+    }
+  };
+
+  const handleDeleteUser = async (userId) => {
+    if (!confirm("Are you sure you want to remove this user?")) return;
+
+    try {
+      const res = await fetch(`/api/admin/user/${userId}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to remove user");
+      }
+
+      toast.success("User removed successfully!");
+      // setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to remove user");
     }
   };
 
