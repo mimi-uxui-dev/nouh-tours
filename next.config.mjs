@@ -28,7 +28,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "*", // Allow only your domain
+            value: "https://www.nouhtours.com", // Allow only your domain
           },
           {
             key: "Access-Control-Allow-Methods",
