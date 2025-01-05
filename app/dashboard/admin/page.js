@@ -11,7 +11,7 @@ export default function AdminDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`/users`, {
+      const res = await fetch(`/api/users`, {
         headers: {
           "Content-Type": "application/json",
         },
