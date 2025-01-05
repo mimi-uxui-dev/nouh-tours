@@ -11,7 +11,7 @@ export default function AdminDashboard() {
   async function fetchData() {
     setLoading(true);
     try {
-      const res = await fetch(`https://www.nouhtours.com/api/users`, {
+      const res = await fetch(`${process.env.API}/users`, {
         headers: {
           "Content-Type": "application/json",
         },
