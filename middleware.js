@@ -22,7 +22,7 @@ export default withAuth(
     if (req.method === "OPTIONS") {
       return new Response(null, {
         headers: {
-          "Access-Control-Allow-Origin": "https://www.nouhtours.com",
+          "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": "true",
           "Access-Control-Allow-Methods":
             "GET, DELETE, PATCH, POST, PUT, OPTIONS",
