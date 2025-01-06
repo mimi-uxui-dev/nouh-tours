@@ -19,7 +19,7 @@ function Contact() {
     adr: "Q35 Lpp sidi abdellah mhalma alger",
     ig: "https://www.instagram.com/nouhtours_",
     fcb: "linkkk",
-    wp: "+213657488980",
+    wp: "https://call.whatsapp.com/voice/TS4eUiZprPUHPozJKJpaue",
     yt: "https://youtube.com/@nouhbz7636?si=cxXr2c9-9KTxPksW",
     tt: "https://www.tiktok.com/@nouh_tours?_t=8sQn3tLjB2M&_r=1",
   };
