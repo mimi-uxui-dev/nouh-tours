@@ -6,8 +6,8 @@ import Link from "next/link";
 function Hero() {
   return (
     <div className="hero-section">
-      <section className="2xl:px-0 px-5 w-full pt-40 flex flex-col lg:mb-48">
-        <div className="max-w-screen-2xl flex self-center flex-col w-full gap-8">
+      <section className="2xl:px-0 px-5 w-full pt-40 flex flex-col lg:mb-48 h-screen">
+        <div className="max-w-screen-xl flex self-center flex-col w-full gap-8">
           <div className="grid gap-6 grid-cols-1 lg:grid-cols-2 items-center md:px-2 px-0 ">
             <div>
               <p className="text-xl lg:text-2xl font-bold mb-6">Welcome 👋</p>
@@ -29,7 +29,7 @@ function Hero() {
               unoptimized
               src={nouh}
               alt="nouh"
-              className="w-fit lg:w-full lg:max-w-xl flex place-self-center"
+              className="w-fit lg:w-full  flex place-self-center"
             />
           </div>
         </div>
