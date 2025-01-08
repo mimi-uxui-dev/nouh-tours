@@ -195,7 +195,7 @@ h1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  @apply h-fit lg:h-screen pb-8 lg:pb-0;
+  @apply h-fit  pb-8 lg:pb-4;
 }
 
 .nav {
