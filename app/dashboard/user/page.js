@@ -44,6 +44,7 @@ export default function UserDashboard() {
         <Link
           href={"https://calendly.com/Nouhtours"}
           className="btn text-center"
+          target="_blank"
         >
           Book Appointment
         </Link>
