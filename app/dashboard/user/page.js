@@ -42,7 +42,7 @@ export default function UserDashboard() {
           {user?.fullName} Dashboard <br />
         </h1>
         <Link
-          href={"https://calendly.com/Nouhtours"}
+          href={"https://calendly.com/teshilette-italy/call-for-consulting"}
           className="btn text-center"
           target="_blank"
         >
