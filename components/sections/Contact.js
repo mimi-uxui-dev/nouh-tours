@@ -54,7 +54,7 @@ function Contact() {
               {data.adr}
             </div>
             <div className="flex flex-row gap-2 md:gap-10 flex-wrap">
-              <Link href={data.ig}>
+              <Link href={data.ig} target="_blank">
                 <Image src={instagram} alt="instagram" />
               </Link>
               {/* <Link href={data.fcb}>
@@ -63,10 +63,10 @@ function Contact() {
               <Link href={data.wp}>
                 <Image src={whatsapp} alt="whatsapp" />
               </Link>
-              <Link href={data.yt}>
+              <Link href={data.yt} target="_blank">
                 <Image src={youtube} alt="youtube" />
               </Link>
-              <Link href={data.tt}>
+              <Link href={data.tt} target="_blank">
                 <Image src={tiktok} alt="tiktok" />
               </Link>
             </div>

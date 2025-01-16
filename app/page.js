@@ -5,10 +5,24 @@ import OurServices from "@/components/sections/OurServices";
 import Quote from "@/components/sections/Quote";
 import Stats from "@/components/sections/Stats";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>Nouh Tours</title>
+
+        <meta property="og:title" content="Study in Italy with Nouh Tours" />
+        <meta
+          name="description"
+          content=" Study in Italy with Nouh – Your Journey Starts Here! Nouh specializes in guiding students to pursue their dreams of
+        studying in Italy. From selecting the right university to
+        navigating visa applications, Nouh ensures a smooth and
+        stress-free process every step of the way. "
+          key="desc"
+        />
+      </Head>
       <Hero />
       <OurServices />
       <OurProcess />
@@ -20,7 +34,8 @@ export default function Home() {
         Made with ❤️ by{" "}
         <Link
           className="text-green-700 underline"
-          href={"https://www.instagram.com/mimikhoudour_official/"}
+          href={"https://www.instagram.com/mimi_khoudour/"}
+          target="_blank"
         >
           Mimi K
         </Link>
