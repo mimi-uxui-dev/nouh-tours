@@ -24,22 +24,24 @@ export default function Home() {
         />
       </Head>
       <Hero />
-      <OurServices />
-      <OurProcess />
-      <Quote />
-      <Stats />
-      <Contact />
-      {/* <Aboutus /> */}
-      <footer className="text-xl font-medium text-center pb-20">
-        Made with ❤️ by{" "}
-        <Link
-          className="text-green-700 underline"
-          href={"https://www.instagram.com/mimi_khoudour/"}
-          target="_blank"
-        >
-          Mimi K
-        </Link>
-      </footer>
+      <div className=" xl:px-10">
+        <OurServices />
+        <OurProcess />
+        <Quote />
+        <Stats />
+        <Contact />
+        {/* <Aboutus /> */}
+        <footer className="text-xl font-medium text-center pb-20">
+          Made with ❤️ by{" "}
+          <Link
+            className="text-green-700 underline"
+            href={"https://www.instagram.com/mimi_khoudour/"}
+            target="_blank"
+          >
+            Mimi K
+          </Link>
+        </footer>
+      </div>
     </div>
   );
 }
