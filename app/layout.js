@@ -1,4 +1,5 @@
 "use client";
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           <Toaster position="top-right" />
           <Nav />
           {children}
+          <Analytics />
         </SessionProvider>
       </body>
     </html>
